@@ -1,5 +1,5 @@
 import { Component, ReactNode } from "react"
-import { Text, Button, View, Image, ScrollView, TouchableOpacity, DeviceEventEmitter, Alert, StyleSheet, } from "react-native";
+import { Text, Button, View, Image, ScrollView, TouchableOpacity, DeviceEventEmitter, Alert, StyleSheet, Pressable } from "react-native";
 import { ThemeStyling } from "../utilty/styling/Styles";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { FontAwesome, AntDesign, Ionicons, Feather, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -39,6 +39,11 @@ export default class WorkorderDetails extends Component<ScreenInterfcae, ScreenS
             notes: ''
         }
     }
+
+    navigateToMaterial() {
+        this.props.navigation.navigate("MaterialDetails");
+    }
+
     async componentDidMount() {
         this.setState({ cameraOn: false });
         this.setState({ user: await CommonHelper.getUserData() });
@@ -374,6 +379,13 @@ export default class WorkorderDetails extends Component<ScreenInterfcae, ScreenS
                         </View>
                     </View>
                 }
+
+                <View style={[ThemeStyling.btnContainer, { marginBottom: 40 }]}>
+                    <TouchableOpacity style={[ThemeStyling.btnPrimary]} onPress={() => { this.navigateToMaterial() }}>
+                        <Text style={ThemeStyling.btnText2}>Material Details</Text>
+                    </TouchableOpacity>
+                </View>
+
                 {this.state.cameraOn &&
                     <CommonCamera onCloseCamera={() => { this.setState({ cameraOn: false }) }} onCaptureImage={(data: any) => { this.setState({ capturedImage: data }); this.setState({ cameraOn: false }) }}></CommonCamera>
                 }

@@ -30,6 +30,7 @@
     "expo-system-ui": "^2.4.0",
     "i18n-js": "^4.2.3",
     "i18next": "^22.5.1",
+    "metro-inspector-proxy": "^0.78.1",
     "react": "18.2.0",
     "react-native": "0.73.1",
     "react-native-element-dropdown": "^2.9.0",
