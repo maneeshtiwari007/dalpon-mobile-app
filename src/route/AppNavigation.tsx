@@ -24,6 +24,7 @@ import Dashboard from "../Screens/Dashboard";
 import Team from "../Screens/Team";
 import Profile from "../Screens/Profile";
 import WorkorderDetails from "../Screens/WorkorderDetails";
+import MaterialDetails from "../Screens/MaterialDetails";
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
@@ -52,6 +53,7 @@ export default class AppContainer extends Component<{}> {
         screenOptions={{ headerShown: false, gestureEnabled: false }}>
         <Stack.Screen name="Work" component={Workorder} />
         <Stack.Screen name="WorkOrderDetail" component={WorkorderDetails} options={{headerShown:true}}></Stack.Screen>
+        <Stack.Screen name="MaterialDetails" component={MaterialDetails} options={{headerShown:true}}></Stack.Screen>
       </Stack.Navigator>
     );
   }
